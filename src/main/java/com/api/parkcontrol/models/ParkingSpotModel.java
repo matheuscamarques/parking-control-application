@@ -1,0 +1,134 @@
+package com.api.parkcontrol.models;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
+import javax.persistence.Id;
+
+@Entity
+@Table(name = "parking_spot")
+public class ParkingSpotModel implements Serializable{
+    private static final long serialVersionUID = 1L;
+
+    @Id 
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
+
+    @Column(nullable = false,unique = true, length = 10)
+    private String parkingSpotNumber;
+
+    @Column(nullable = false,unique = true, length = 7)
+    private String licensePlateCar;
+
+    @Column(nullable = false,length = 70)
+    private String brandCar;
+
+    @Column(nullable = false,length = 70)
+    private String modelCar;
+
+    @Column(nullable = false,length = 70)
+    private String colorCar;
+
+    @Column(nullable = false)
+    private LocalDateTime registrationDate;
+
+    @Column(nullable = false,length = 130)
+    private String responsibleName;
+
+    @Column(nullable = false,length = 30)
+    private String apartament;   
+
+    @Column(nullable = false,length = 30)
+    private String block;
+
+    // Getters 
+    public UUID getId() {
+        return id;
+    }
+
+    public String getParkingSpotNumber() {
+        return parkingSpotNumber;
+    }
+
+    public String getLicensePlateCar() {
+        return licensePlateCar;
+    }
+
+    public String getBrandCar() {
+        return brandCar;
+    }
+
+    public String getModelCar() {
+        return modelCar;
+    }
+
+    public String getColorCar() {
+        return colorCar;
+    }
+
+    public LocalDateTime getRegistrationDate() {
+        return registrationDate;
+    }   
+
+    public String getResponsibleName() {
+        return responsibleName;
+    }
+
+    public String getApartament() {
+        return apartament;
+    }
+
+    public String getBlock() {
+        return block;
+    }
+
+    // Setters
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public void setParkingSpotNumber(String parkingSpotNumber) {
+        this.parkingSpotNumber = parkingSpotNumber;
+    }
+
+    public void setLicensePlateCar(String licensePlateCar) {
+        this.licensePlateCar = licensePlateCar;
+    }
+
+    public void setBrandCar(String brandCar) {
+        this.brandCar = brandCar;
+    }
+
+    public void setModelCar(String modelCar) {
+        this.modelCar = modelCar;
+    }
+
+    public void setColorCar(String colorCar) {
+        this.colorCar = colorCar;
+    }
+
+    public void setRegistrationDate(LocalDateTime registrationDate) {
+        this.registrationDate = registrationDate;
+    }
+
+    public void setResponsibleName(String responsibleName) {
+        this.responsibleName = responsibleName;
+    }
+
+    public void setApartament(String apartament) {
+        this.apartament = apartament;
+    }
+
+    public void setBlock(String block) {
+        this.block = block;
+    }
+
+
+
+}
