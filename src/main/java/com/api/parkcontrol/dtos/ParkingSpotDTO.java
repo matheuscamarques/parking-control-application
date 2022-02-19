@@ -1,8 +1,5 @@
 package com.api.parkcontrol.dtos;
 
-import java.time.LocalDateTime;
-import java.util.UUID;
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
